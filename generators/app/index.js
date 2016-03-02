@@ -49,7 +49,6 @@ module.exports = yeoman.generators.Base.extend({
       './src/Generator-CoderCamps-NET/package.json',
       './src/Generator-CoderCamps-NET/Project_Readme.html',
       './src/Generator-CoderCamps-NET/project.json',
-      './src/Generator-CoderCamps-NET/project.lock.json',
       './src/Generator-CoderCamps-NET/Startup.cs',
       './src/Generator-CoderCamps-NET/tsconfig.json',
       './src/Generator-CoderCamps-NET/typings.json',
