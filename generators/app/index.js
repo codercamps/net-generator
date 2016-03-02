@@ -29,7 +29,7 @@ module.exports = yeoman.generators.Base.extend({
     }];
 
     inquirer.prompt(prompts, function(props) {
-      this.appName = _s.titleize(_s.slugify(props.appName));
+      this.appName = props.appName.replace(/\s\s/g, '-')
       this.appNamespace = this.appName.replace(/-/g, '_');
       // this.appName = _s.slugify(props.appName) || 'coder-camps-js';
       // this.appDesc = props.appDesc || 'A MEAN stack application.';
@@ -126,7 +126,7 @@ module.exports = yeoman.generators.Base.extend({
     for (let file of genFiles) {
       this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
     }
-    this.template('./.vs/Generator-CoderCamps-NET/v14/.suo', './vs/' + appName + '/v14/.suo');
+    this.template('./.vs/Generator-CoderCamps-NET/v14/.suo', './.vs/' + appName + '/v14/.suo');
     this.template('./Generator-CoderCamps-NET.sln', './' + appName + '.sln');
     this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj', './src/' + appName + '/' + appName + '.xproj');
     this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user', './src/' + appName + '/' + appName + '.xproj.user');
