@@ -1,10 +1,10 @@
-﻿using Generator_CoderCamps_NET.Models;
+﻿using <%= appNamespace %>.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Generator_CoderCamps_NET.Services
+namespace <%= appNamespace %>.Services
 {
     public class GuestbookService : IGuestbookService
     {
@@ -27,7 +27,7 @@ namespace Generator_CoderCamps_NET.Services
             return _entries;
         }
 
-  
+
 
         public void SaveEntry(GuestbookEntry entry)
         {
