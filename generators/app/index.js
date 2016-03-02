@@ -7,7 +7,7 @@ var _s = require('underscore.string');
 var inquirer = require('inquirer');
 
 module.exports = yeoman.generators.Base.extend({
-  prompting: function () {
+  prompting: function() {
     var done = this.async();
     // Have Yeoman greet the user.
     this.log(yosay(
@@ -16,16 +16,20 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
       name: 'appName',
       message: 'What is the name of your application?',
-      required: true
-    },{
+      required: true,
+      default: 'Generator-CoderCamps-NET'
+    }, {
       name: 'type',
       message: 'Which type of project would you like to create?',
       type: 'list',
-      choices: ['Empty', 'Sample Data', { name: 'Security - Disabled Currently', disabled: true }]
+      choices: ['Empty', 'Sample Data', {
+        name: 'Security - Disabled Currently',
+        disabled: true
+      }]
     }];
 
     inquirer.prompt(prompts, function(props) {
-      this.appName= _s.titleize(_s.slugify(props.appName));
+      this.appName = _s.titleize(_s.slugify(props.appName));
       this.appNamespace = this.appName.replace(/-/g, '_');
       // this.appName = _s.slugify(props.appName) || 'coder-camps-js';
       // this.appDesc = props.appDesc || 'A MEAN stack application.';
@@ -41,88 +45,95 @@ module.exports = yeoman.generators.Base.extend({
 
     let files = [
       './.vs/config/applicationhost.config',
-      './.vs/Generator-CoderCamps-NET/v14/.suo',
+      './global.json'
+    ];
 
-      './global.json',
-      './Generator-CoderCamps-NET.sln',
+    let genFiles = [
+      '/.bowerrc',
+      '/appsettings.json',
+      '/bower.json',
+      '/gulpfile.js',
+      '/package.json',
+      '/Project_Readme.html',
+      '/project.json',
+      '/Startup.cs',
+      '/tsconfig.json',
+      '/typings.json',
 
-      './src/Generator-CoderCamps-NET/.bowerrc',
-      './src/Generator-CoderCamps-NET/appsettings.json',
-      './src/Generator-CoderCamps-NET/bower.json',
-      './src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj',
-      './src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user',
-      './src/Generator-CoderCamps-NET/gulpfile.js',
-      './src/Generator-CoderCamps-NET/package.json',
-      './src/Generator-CoderCamps-NET/Project_Readme.html',
-      './src/Generator-CoderCamps-NET/project.json',
-      './src/Generator-CoderCamps-NET/Startup.cs',
-      './src/Generator-CoderCamps-NET/tsconfig.json',
-      './src/Generator-CoderCamps-NET/typings.json',
-
-      './src/Generator-CoderCamps-NET/Controllers/HomeController.cs',
+      '/Controllers/HomeController.cs',
       // Migrations
-      './src/Generator-CoderCamps-NET/Migrations/00000000000000_CreateIdentitySchema.cs',
-      './src/Generator-CoderCamps-NET/Migrations/00000000000000_CreateIdentitySchema.Designer.cs',
-      './src/Generator-CoderCamps-NET/Migrations/ApplicationDbContextModelSnapshot.cs',
+      '/Migrations/00000000000000_CreateIdentitySchema.cs',
+      '/Migrations/00000000000000_CreateIdentitySchema.Designer.cs',
+      '/Migrations/ApplicationDbContextModelSnapshot.cs',
       // Models
-      './src/Generator-CoderCamps-NET/Models/ApplicationDbContext.cs',
-      './src/Generator-CoderCamps-NET/Models/ApplicationUser.cs',
+      '/Models/ApplicationDbContext.cs',
+      '/Models/ApplicationUser.cs',
       // Properties
-      './src/Generator-CoderCamps-NET/Properties/launchSettings.json',
+      '/Properties/launchSettings.json',
       // Services
-      './src/Generator-CoderCamps-NET/Services/IEmailSender.cs',
-      './src/Generator-CoderCamps-NET/Services/ISmsSender.cs',
-      './src/Generator-CoderCamps-NET/Services/MessageServices.cs',
+      '/Services/IEmailSender.cs',
+      '/Services/ISmsSender.cs',
+      '/Services/MessageServices.cs',
       // View Models -- Account
-      './src/Generator-CoderCamps-NET/ViewModels/Account/ExternalLoginConfirmationViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Account/ForgotPasswordViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Account/LoginViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Account/RegisterViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Account/ResetPasswordViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Account/SendCodeViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Account/VerifyCodeViewModel.cs',
+      '/ViewModels/Account/ExternalLoginConfirmationViewModel.cs',
+      '/ViewModels/Account/ForgotPasswordViewModel.cs',
+      '/ViewModels/Account/LoginViewModel.cs',
+      '/ViewModels/Account/RegisterViewModel.cs',
+      '/ViewModels/Account/ResetPasswordViewModel.cs',
+      '/ViewModels/Account/SendCodeViewModel.cs',
+      '/ViewModels/Account/VerifyCodeViewModel.cs',
       // View Models -- Manage
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/AddPhoneNumberViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/ChangePasswordViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/ConfigureTwoFactorViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/FactorViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/IndexViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/ManageLoginsViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/RemoveLoginViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/SetPasswordViewModel.cs',
-      './src/Generator-CoderCamps-NET/ViewModels/Manage/VerifyPhoneNumberViewModel.cs',
+      '/ViewModels/Manage/AddPhoneNumberViewModel.cs',
+      '/ViewModels/Manage/ChangePasswordViewModel.cs',
+      '/ViewModels/Manage/ConfigureTwoFactorViewModel.cs',
+      '/ViewModels/Manage/FactorViewModel.cs',
+      '/ViewModels/Manage/IndexViewModel.cs',
+      '/ViewModels/Manage/ManageLoginsViewModel.cs',
+      '/ViewModels/Manage/RemoveLoginViewModel.cs',
+      '/ViewModels/Manage/SetPasswordViewModel.cs',
+      '/ViewModels/Manage/VerifyPhoneNumberViewModel.cs',
       // Views
-      './src/Generator-CoderCamps-NET/Views/Home/Index.cshtml',
+      '/Views/Home/Index.cshtml',
       // wwwroot
-      './src/Generator-CoderCamps-NET/wwwroot/_references.js',
-      './src/Generator-CoderCamps-NET/wwwroot/favicon.ico',
-      './src/Generator-CoderCamps-NET/wwwroot/web.config',
+      '/wwwroot/_references.js',
+      '/wwwroot/favicon.ico',
+      '/wwwroot/web.config',
       // wwwroot -- css
-      './src/Generator-CoderCamps-NET/wwwroot/css/site.css',
-      './src/Generator-CoderCamps-NET/wwwroot/css/site.min.css',
+      '/wwwroot/css/site.css',
+      '/wwwroot/css/site.min.css',
       // wwwroot -- images
-      './src/Generator-CoderCamps-NET/wwwroot/images/ASP-NET-Banners-01.png',
-      './src/Generator-CoderCamps-NET/wwwroot/images/ASP-NET-Banners-02.png',
-      './src/Generator-CoderCamps-NET/wwwroot/images/Banner-01-Azure.png',
-      './src/Generator-CoderCamps-NET/wwwroot/images/Banner-02-VS.png',
+      '/wwwroot/images/ASP-NET-Banners-01.png',
+      '/wwwroot/images/ASP-NET-Banners-02.png',
+      '/wwwroot/images/Banner-01-Azure.png',
+      '/wwwroot/images/Banner-02-VS.png',
       // wwwroot -- js
-      './src/Generator-CoderCamps-NET/wwwroot/js/site.js',
-      './src/Generator-CoderCamps-NET/wwwroot/js/site.min.js',
+      '/wwwroot/js/site.js',
+      '/wwwroot/js/site.min.js',
       // wwwroot -- ngApp
-      './src/Generator-CoderCamps-NET/wwwroot/ngApp/about.html',
-      './src/Generator-CoderCamps-NET/wwwroot/ngApp/app.ts',
-      './src/Generator-CoderCamps-NET/wwwroot/ngApp/controllers.ts',
-      './src/Generator-CoderCamps-NET/wwwroot/ngApp/home.html',
-      './src/Generator-CoderCamps-NET/wwwroot/ngApp/notFound.html',
-      './src/Generator-CoderCamps-NET/wwwroot/ngApp/services.ts',
+      '/wwwroot/ngApp/about.html',
+      '/wwwroot/ngApp/app.ts',
+      '/wwwroot/ngApp/controllers.ts',
+      '/wwwroot/ngApp/home.html',
+      '/wwwroot/ngApp/notFound.html',
+      '/wwwroot/ngApp/services.ts',
     ];
 
     for (let file of files) {
       this.template(file, file);
     }
+    var new_root = './src/' + this.appName;
+    var appName = this.appName;
+    for (let file of genFiles) {
+      this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
+    }
+    this.template('./.vs/Generator-CoderCamps-NET/v14/.suo', './vs/' + appName + '/v14/.suo');
+    this.template('./Generator-CoderCamps-NET.sln', './' + appName + '.sln');
+    this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj', './src/' + appName + '/' + appName + '.xproj');
+    this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user', './src/' + appName + '/' + appName + '.xproj.user');
   },
   install: function() {
-    process.chdir(process.cwd() + '/src/Generator-CoderCamps-NET');
+    var appName = this.appName
+    process.chdir(process.cwd() + '/src/' + appName);
     // this.installDependencies();
     this.spawnCommandSync('typings', ['install']);
   }
