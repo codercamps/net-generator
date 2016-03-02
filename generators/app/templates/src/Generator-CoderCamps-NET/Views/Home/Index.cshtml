@@ -1,0 +1,31 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+<head>
+    <title>CoderCamps</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+<body>
+    <div class="container">
+        <h1>My App</h1>
+        <div>
+            <a href="/">Home</a> /
+            <a href="/about">About</a>
+        </div>
+        <hr />
+
+        <ui-view></ui-view>
+    </div>
+
+    <!-- Libary Files -->
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/lib/angular-resource/angular-resource.min.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- App Files-->
+    <script src="~/ngapp/app.js"></script>
+    <script src="~/ngapp/controllers.js"></script>
+    <script src="~/ngapp/services.js"></script>
+</body>
+</html>
