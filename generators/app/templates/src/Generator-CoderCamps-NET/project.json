@@ -1,5 +1,5 @@
 ﻿{
-  "userSecretsId": "aspnet5-Generator_CoderCamps_NET-6098d324-d1ad-4192-8f7e-c0ce43808d72",
+  "userSecretsId": "aspnet5-<%= appName %>-6098d324-d1ad-4192-8f7e-c0ce43808d72",
   "version": "1.0.0-*",
   "compilationOptions": {
     "emitEntryPoint": true

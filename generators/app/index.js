@@ -14,6 +14,10 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to the ' + chalk.red('Angular') + ' generator!'
     ));
     var prompts = [{
+      name: 'appName',
+      message: 'What is the name of your application?',
+      required: true
+    },{
       name: 'type',
       message: 'Which type of project would you like to create?',
       type: 'list',
@@ -21,6 +25,8 @@ module.exports = yeoman.generators.Base.extend({
     }];
 
     inquirer.prompt(prompts, function(props) {
+      this.appName= _s.titleize(_s.slugify(props.appName));
+      this.appNamespace = this.appName.replace(/-/g, '_');
       // this.appName = _s.slugify(props.appName) || 'coder-camps-js';
       // this.appDesc = props.appDesc || 'A MEAN stack application.';
       this.type = props.type;
@@ -112,10 +118,7 @@ module.exports = yeoman.generators.Base.extend({
     ];
 
     for (let file of files) {
-      this.fs.copyTpl(
-        this.templatePath(file),
-        this.destinationPath(file)
-      );
+      this.template(file, file);
     }
   },
   install: function() {

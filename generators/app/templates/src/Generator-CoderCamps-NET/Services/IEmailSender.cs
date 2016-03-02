@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Generator_CoderCamps_NET.Services
+namespace <%= appNamespace %>.Services
 {
     public interface IEmailSender
     {

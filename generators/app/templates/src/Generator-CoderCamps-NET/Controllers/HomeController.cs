@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 
-namespace Generator_CoderCamps_NET.Controllers
+namespace <%= appNamespace %>.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,7 +13,7 @@ namespace Generator_CoderCamps_NET.Controllers
             return View();
         }
 
- 
+
         public IActionResult Error()
         {
             return View();

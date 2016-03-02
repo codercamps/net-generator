@@ -9,11 +9,11 @@ using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Generator_CoderCamps_NET.Models;
-using Generator_CoderCamps_NET.Services;
+using <%= appNamespace %>.Models;
+using <%= appNamespace %>.Services;
 using Newtonsoft.Json.Serialization;
 
-namespace Generator_CoderCamps_NET
+namespace <%= appNamespace %>
 {
     public class Startup
     {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Generator_CoderCamps_NET.ViewModels.Account
+namespace <%= appNamespace %>.ViewModels.Account
 {
     public class ResetPasswordViewModel
     {

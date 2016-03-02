@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
 
-namespace Generator_CoderCamps_NET.Models
+namespace <%= appNamespace %>.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

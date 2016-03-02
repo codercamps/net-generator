@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Http.Authentication;
 using Microsoft.AspNet.Identity;
 
-namespace Generator_CoderCamps_NET.ViewModels.Manage
+namespace <%= appNamespace %>.ViewModels.Manage
 {
     public class ManageLoginsViewModel
     {

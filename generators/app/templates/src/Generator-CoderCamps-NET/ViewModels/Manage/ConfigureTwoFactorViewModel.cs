@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc.Rendering;
 
-namespace Generator_CoderCamps_NET.ViewModels.Manage
+namespace <%= appNamespace %>.ViewModels.Manage
 {
     public class ConfigureTwoFactorViewModel
     {

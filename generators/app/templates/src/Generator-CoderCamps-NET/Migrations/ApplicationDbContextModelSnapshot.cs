@@ -6,9 +6,9 @@ using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
-using Generator_CoderCamps_NET.Models;
+using <%= appNamespace %>.Models;
 
-namespace Generator_CoderCamps_NET.Migrations
+namespace <%= appNamespace %>.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
