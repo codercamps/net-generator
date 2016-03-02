@@ -141,6 +141,13 @@ module.exports = yeoman.generators.Base.extend({
         '/API/MakesController.cs',
         '/API/MoviesController.cs',
 
+        '/Models/Answer.cs',
+        '/Models/Car.cs',
+        '/Models/CarMake.cs',
+        '/Models/Genre.cs',
+        '/Models/GuestbookEntry.cs',
+        '/Models/Movie.cs',
+
         '/Services/CarService.cs',
         '/Services/GenreService.cs',
         '/Services/GuestbookService.cs',
