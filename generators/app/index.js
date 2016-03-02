@@ -120,11 +120,8 @@ module.exports = yeoman.generators.Base.extend({
     }
   },
   install: function() {
-    // this.installDependencies();
     process.chdir(process.cwd() + '/src/Generator-CoderCamps-NET');
-    // this.spawnCommandSync('npm', ['--prefix', './src/Generator-CoderCamps-NET', 'install', './src/Generator-CoderCamps-NET']);
-    // this.spawnCommandSync('bower', ['install', '--config.cwd=./src/Generator-CoderCamps-NET']);
-    this.installDependencies();
+    // this.installDependencies();
     this.spawnCommandSync('typings', ['install']);
   }
 });
