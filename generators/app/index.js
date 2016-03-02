@@ -131,6 +131,31 @@ module.exports = yeoman.generators.Base.extend({
     this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj', './src/' + appName + '/' + appName + '.xproj');
     this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user', './src/' + appName + '/' + appName + '.xproj.user');
   },
+  sample_data: function() {
+    if(this.type === 'Sample Data') {
+      var files = [
+        '/API/CarsController.cs',
+        '/API/DeepThought.cs',
+        '/API/GenresController.cs',
+        '/API/GuestbookController.cs',
+        '/API/MakesController.cs',
+        '/API/MoviesController.cs',
+
+        '/Services/CarService.cs',
+        '/Services/GenreService.cs',
+        '/Services/GuestbookService.cs',
+        '/Services/ICarService.cs',
+        '/Services/IGenreService.cs',
+        '/Services/IGuestbookService.cs',
+        '/Services/IMovieService.cs',
+        '/Services/MovieService.cs'
+      ];
+      var new_root = './src/' + this.appName;
+      for(let file of files) {
+        this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
+      }
+    }
+  },
   install: function() {
     var appName = this.appName
     process.chdir(process.cwd() + '/src/' + appName);
