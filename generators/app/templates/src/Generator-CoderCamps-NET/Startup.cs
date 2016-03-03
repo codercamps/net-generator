@@ -53,8 +53,13 @@ namespace <%= appNamespace %>
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
+            services.AddTransient<ISmsSender, AuthMessageSender>();<% if(type === 'Sample Data') { %>
 
+            // Add app services
+            services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<IGuestbookService, GuestbookService>();
+            services.AddScoped<ICarService, CarService>();<% } %>
 
             // convert Pascal to Camel
             services.AddMvc().AddJsonOptions(options => {
