@@ -1,6 +1,6 @@
 ﻿namespace <%= appNamespace %> {
 
-    angular.module('MyApp', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('<%= appNamespace %>', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider

@@ -1,4 +1,4 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="<%= appNamespace %>">
 <head>
     <title><%= appName %></title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
         <ui-view></ui-view>
     </div>
 
-    <!-- Libary Files -->
+    <!-- Library Files -->
     <script src="~/lib/angular/angular.min.js"></script>
     <script src="~/lib/angular-resource/angular-resource.min.js"></script>
     <script src="~/lib/angular-animate/angular-animate.min.js"></script>
