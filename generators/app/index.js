@@ -44,7 +44,6 @@ module.exports = yeoman.generators.Base.extend({
     // this.template('typings.json', 'typings.json');
 
     let files = [
-      './.vs/config/applicationhost.config',
       './global.json'
     ];
 
@@ -111,25 +110,26 @@ module.exports = yeoman.generators.Base.extend({
       '/wwwroot/js/site.min.js',
       // wwwroot -- ngApp
       '/wwwroot/ngApp/about.html',
-      '/wwwroot/ngApp/app.ts',
-      '/wwwroot/ngApp/controllers.ts',
       '/wwwroot/ngApp/home.html',
-      '/wwwroot/ngApp/notFound.html',
-      '/wwwroot/ngApp/services.ts',
+      '/wwwroot/ngApp/notFound.html'
     ];
 
     for (let file of files) {
       this.template(file, file);
     }
-    var new_root = './src/' + this.appName;
+    var new_root = './' + this.appName + '/src/' + this.appName;
     var appName = this.appName;
     for (let file of genFiles) {
       this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
     }
-    this.template('./.vs/Generator-CoderCamps-NET/v14/.suo', './.vs/' + appName + '/v14/.suo');
-    this.template('./Generator-CoderCamps-NET.sln', './' + appName + '.sln');
-    this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj', './src/' + appName + '/' + appName + '.xproj');
-    this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user', './src/' + appName + '/' + appName + '.xproj.user');
+    this.template('./Generator-CoderCamps-NET.sln', './' + appName + '/' + appName + '.sln');
+    this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj', new_root + '/' + appName + '.xproj');
+    this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user', new_root + '/' + appName + '.xproj.user');
+
+    this.template('./src/Generator-CoderCamps-NET/wwwroot/ngApp/app.ts', new_root + '/wwwroot/ngApp/app.ts');
+    this.template('./src/Generator-CoderCamps-NET/wwwroot/ngApp/controllers.ts', new_root + '/wwwroot/ngApp/controllers.ts');
+    this.template('./src/Generator-CoderCamps-NET/wwwroot/ngApp/services.ts', new_root + '/wwwroot/ngApp/services.ts');
+
   },
   sample_data: function() {
     if(this.type === 'Sample Data') {
@@ -157,7 +157,7 @@ module.exports = yeoman.generators.Base.extend({
         '/Services/IMovieService.cs',
         '/Services/MovieService.cs'
       ];
-      var new_root = './src/' + this.appName;
+      var new_root = './' + this.appName + '/src/' + this.appName;
       for(let file of files) {
         this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
       }
@@ -165,7 +165,7 @@ module.exports = yeoman.generators.Base.extend({
   },
   install: function() {
     var appName = this.appName
-    process.chdir(process.cwd() + '/src/' + appName);
+    process.chdir(process.cwd() + '/' + appName + '/src/' + appName);
     // this.installDependencies();
     this.spawnCommandSync('typings', ['install']);
   }

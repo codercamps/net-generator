@@ -1,6 +1,6 @@
-﻿namespace MyApp {
+﻿namespace <%= appNamespace %> {
 
-    angular.module('MyApp', ['ui.router', 'ngResource']).config((
+    angular.module('MyApp', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider
@@ -10,13 +10,13 @@
             .state('home', {
                 url: '/',
                 templateUrl: '/ngApp/home.html',
-                controller: MyApp.Controllers.HomeController,
+                controller: <%= appNamespace %>.Controllers.HomeController,
                 controllerAs: 'controller'
             })
             .state('about', {
                 url: '/about',
                 templateUrl: '/ngApp/about.html',
-                controller: MyApp.Controllers.AboutController,
+                controller: <%= appNamespace %>.Controllers.AboutController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

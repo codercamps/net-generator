@@ -1,4 +1,4 @@
-﻿namespace MyApp.Services {
+﻿namespace <%= appNamespace %>.Services {
 
     export class MovieService {
         private MovieResource;
