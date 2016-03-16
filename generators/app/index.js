@@ -115,7 +115,7 @@ module.exports = yeoman.generators.Base.extend({
     ];
 
     for (let file of files) {
-      this.template(file, file);
+      this.template(file, './' + this.appName + file);
     }
     var new_root = './' + this.appName + '/src/' + this.appName;
     var appName = this.appName;

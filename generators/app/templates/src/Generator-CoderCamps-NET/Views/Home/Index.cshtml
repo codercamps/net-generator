@@ -1,4 +1,4 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="<%= appNamespace %>">
 <head>
     <title><%= appName %></title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -17,13 +17,13 @@
         <ui-view></ui-view>
     </div>
 
-    <!-- Libary Files -->
-    <script src="~/lib/angular/angular.min.js"></script>
-    <script src="~/lib/angular-resource/angular-resource.min.js"></script>
-    <script src="~/lib/angular-animate/angular-animate.min.js"></script>
-    <script src="~/lib/angular-touch/angular-touch.min.js"></script>
-    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- Library Files -->
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-resource/angular-resource.js"></script>
+    <script src="~/lib/angular-animate/angular-animate.js"></script>
+    <script src="~/lib/angular-touch/angular-touch.js"></script>
+    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
 
     <!-- App Files-->
     <script src="~/ngapp/app.js"></script>

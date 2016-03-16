@@ -13,6 +13,6 @@
     }
 
 
-    angular.module('MyApp').service('movieService', MovieService);
+    angular.module('<%= appNamespace %>').service('movieService', MovieService);
 
 }
