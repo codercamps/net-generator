@@ -1,7 +1,7 @@
 {
   "name": "generator-codercamps-net",
-  "version": "0.0.3",
-  "description": "Starter site for AngularJS + ExpressJS + MongoDB + TypeScript Apps",
+  "version": "0.0.4",
+  "description": "Starter site for AngularJS + ASP.NET Core + TypeScript Apps",
   "homepage": "",
   "author": {
     "name": "Jeremy-Doucet",
