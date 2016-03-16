@@ -15,5 +15,5 @@
     <% } %><% if(type === "Sample Data") { %>export class MyService {
 
     }
-    angular.module('<% appNamespace %>').service('myService', MyService);
+    angular.module('<%= appNamespace %>').service('myService', MyService);
     <% } %>}
