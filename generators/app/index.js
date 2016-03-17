@@ -44,7 +44,8 @@ module.exports = yeoman.generators.Base.extend({
     // this.template('typings.json', 'typings.json');
 
     let files = [
-      './global.json'
+      './global.json',
+      './.gitignore'
     ];
 
     let genFiles = [
@@ -95,6 +96,7 @@ module.exports = yeoman.generators.Base.extend({
       '/Views/Home/Index.cshtml',
       // wwwroot
       '/wwwroot/_references.js',
+      '/wwwroot/.gitignore',
       '/wwwroot/favicon.ico',
       '/wwwroot/web.config',
       // wwwroot -- css
