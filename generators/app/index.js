@@ -43,11 +43,7 @@ module.exports = yeoman.generators.Base.extend({
     // this.template('./views/index.html', './views/index.html');
     // this.template('typings.json', 'typings.json');
 
-    let files = [
-      './global.json',
       './.gitignore'
-    ];
-
     let genFiles = [
       '/.bowerrc',
       '/appsettings.json',
@@ -113,25 +109,28 @@ module.exports = yeoman.generators.Base.extend({
       // wwwroot -- ngApp
       '/wwwroot/ngApp/about.html',
       '/wwwroot/ngApp/home.html',
-      '/wwwroot/ngApp/notFound.html'
+      '/wwwroot/ngApp/notFound.html',
+      '/wwwroot/ngApp/app.ts',
+      '/wwwroot/ngApp/services.ts',
+      '/wwwroot/ngApp/controllers.ts'
     ];
 
-    for (let file of files) {
-      this.template(file, './' + this.appName + file);
-    }
     var new_root = './' + this.appName + '/src/' + this.appName;
     var appName = this.appName;
     for (let file of genFiles) {
       this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
     }
+
+    // global.json in root
+    this.template('./global.json', './' + appName + '/global.json');
+    // .gitignore in root
+    this.template('./.gitignore', './' + appName + '/.gitignore');
+    // appName.sln in root
     this.template('./Generator-CoderCamps-NET.sln', './' + appName + '/' + appName + '.sln');
+    // appName.xproj file
     this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj', new_root + '/' + appName + '.xproj');
+    // appName.xproj.user file
     this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user', new_root + '/' + appName + '.xproj.user');
-
-    this.template('./src/Generator-CoderCamps-NET/wwwroot/ngApp/app.ts', new_root + '/wwwroot/ngApp/app.ts');
-    this.template('./src/Generator-CoderCamps-NET/wwwroot/ngApp/controllers.ts', new_root + '/wwwroot/ngApp/controllers.ts');
-    this.template('./src/Generator-CoderCamps-NET/wwwroot/ngApp/services.ts', new_root + '/wwwroot/ngApp/services.ts');
-
   },
   sample_data: function() {
     if(this.type === 'Sample Data') {

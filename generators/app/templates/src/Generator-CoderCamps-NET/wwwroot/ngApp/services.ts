@@ -1,6 +1,6 @@
 ﻿namespace <%= appNamespace %>.Services {
 
-    export class MovieService {
+    <% if(type === "Sample Data") { %>export class MovieService {
         private MovieResource;
 
         public listMovies() {
@@ -11,8 +11,9 @@
             this.MovieResource = $resource('/api/movies');
         }
     }
-
-
     angular.module('<%= appNamespace %>').service('movieService', MovieService);
+    <% } %><% if(type === "Sample Data") { %>export class MyService {
 
-}
+    }
+    angular.module('<%= appNamespace %>').service('myService', MyService);
+    <% } %>}
