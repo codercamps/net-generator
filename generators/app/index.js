@@ -2,7 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
-var _ = require('lodash');
+// var _ = require('lodash');
 var _s = require('underscore.string');
 var inquirer = require('inquirer');
 
@@ -43,7 +43,6 @@ module.exports = yeoman.generators.Base.extend({
     // this.template('./views/index.html', './views/index.html');
     // this.template('typings.json', 'typings.json');
 
-      './.gitignore'
     let genFiles = [
       '/.bowerrc',
       '/appsettings.json',
@@ -103,9 +102,6 @@ module.exports = yeoman.generators.Base.extend({
       '/wwwroot/images/ASP-NET-Banners-02.png',
       '/wwwroot/images/Banner-01-Azure.png',
       '/wwwroot/images/Banner-02-VS.png',
-      // wwwroot -- js
-      '/wwwroot/js/site.js',
-      '/wwwroot/js/site.min.js',
       // wwwroot -- ngApp
       '/wwwroot/ngApp/about.html',
       '/wwwroot/ngApp/home.html',
