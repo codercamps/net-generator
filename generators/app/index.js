@@ -43,7 +43,6 @@ module.exports = yeoman.generators.Base.extend({
     // this.template('./views/index.html', './views/index.html');
     // this.template('typings.json', 'typings.json');
 
-      './.gitignore'
     let genFiles = [
       '/.bowerrc',
       '/appsettings.json',
@@ -92,7 +91,6 @@ module.exports = yeoman.generators.Base.extend({
       '/Views/Home/Index.cshtml',
       // wwwroot
       '/wwwroot/_references.js',
-      '/wwwroot/.gitignore',
       '/wwwroot/favicon.ico',
       '/wwwroot/web.config',
       // wwwroot -- css
@@ -103,9 +101,6 @@ module.exports = yeoman.generators.Base.extend({
       '/wwwroot/images/ASP-NET-Banners-02.png',
       '/wwwroot/images/Banner-01-Azure.png',
       '/wwwroot/images/Banner-02-VS.png',
-      // wwwroot -- js
-      '/wwwroot/js/site.js',
-      '/wwwroot/js/site.min.js',
       // wwwroot -- ngApp
       '/wwwroot/ngApp/about.html',
       '/wwwroot/ngApp/home.html',
@@ -124,7 +119,9 @@ module.exports = yeoman.generators.Base.extend({
     // global.json in root
     this.template('./global.json', './' + appName + '/global.json');
     // .gitignore in root
-    this.template('./.gitignore', './' + appName + '/.gitignore');
+    this.template('./giti', './' + appName + '/.gitignore');
+    // .gitignore in wwwroot
+    this.template('./src/Generator-CoderCamps-NET/wwwroot/giti', new_root + '/wwwroot/.gitignore');
     // appName.sln in root
     this.template('./Generator-CoderCamps-NET.sln', './' + appName + '/' + appName + '.sln');
     // appName.xproj file
