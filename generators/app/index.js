@@ -43,6 +43,7 @@ module.exports = yeoman.generators.Base.extend({
     // this.template('./views/index.html', './views/index.html');
     // this.template('typings.json', 'typings.json');
 
+      './.gitignore'
     let genFiles = [
       '/.bowerrc',
       '/appsettings.json',
@@ -91,6 +92,7 @@ module.exports = yeoman.generators.Base.extend({
       '/Views/Home/Index.cshtml',
       // wwwroot
       '/wwwroot/_references.js',
+      '/wwwroot/.gitignore',
       '/wwwroot/favicon.ico',
       '/wwwroot/web.config',
       // wwwroot -- css
@@ -121,6 +123,8 @@ module.exports = yeoman.generators.Base.extend({
 
     // global.json in root
     this.template('./global.json', './' + appName + '/global.json');
+    // .gitignore in root
+    this.template('./.gitignore', './' + appName + '/.gitignore');
     // appName.sln in root
     this.template('./Generator-CoderCamps-NET.sln', './' + appName + '/' + appName + '.sln');
     // appName.xproj file

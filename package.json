@@ -1,6 +1,6 @@
 {
   "name": "generator-codercamps-net",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Starter site for AngularJS + ASP.NET Core + TypeScript Apps",
   "homepage": "",
   "author": {
@@ -31,7 +31,7 @@
     "yeoman-assert": "^2.0.0",
     "yeoman-generator": "^0.21.1"
   },
-  "repository": "CoderCamps/generator-codercamps-js",
+  "repository": "CoderCamps/generator-codercamps-net",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
