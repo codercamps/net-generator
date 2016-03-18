@@ -1,0 +1,118 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.8.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.8.1
+3 info using node@v5.8.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/jeremydoucet/Documents/projects/cc-generators/generator-codercamps-net',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/jeremydoucet/.npm/generator-codercamps-net/0.0.5/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/jeremydoucet/.npm correctMkdir not in flight; initializing
+10 info lifecycle generator-codercamps-net@0.0.5~prepublish: generator-codercamps-net@0.0.5
+11 verbose lifecycle generator-codercamps-net@0.0.5~prepublish: unsafe-perm in lifecycle true
+12 verbose lifecycle generator-codercamps-net@0.0.5~prepublish: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jeremydoucet/Documents/projects/cc-generators/generator-codercamps-net/node_modules/.bin:/usr/local/Cellar/node/5.8.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+13 verbose lifecycle generator-codercamps-net@0.0.5~prepublish: CWD: /Users/jeremydoucet/Documents/projects/cc-generators/generator-codercamps-net
+14 silly lifecycle generator-codercamps-net@0.0.5~prepublish: Args: [ '-c', 'gulp prepublish' ]
+15 silly lifecycle generator-codercamps-net@0.0.5~prepublish: Returned: code: 0  signal: null
+16 verbose tar pack [ '/Users/jeremydoucet/.npm/generator-codercamps-net/0.0.5/package.tgz',
+16 verbose tar pack   '/Users/jeremydoucet/Documents/projects/cc-generators/generator-codercamps-net' ]
+17 verbose tarball /Users/jeremydoucet/.npm/generator-codercamps-net/0.0.5/package.tgz
+18 verbose folder /Users/jeremydoucet/Documents/projects/cc-generators/generator-codercamps-net
+19 verbose addLocalTarball adding from inside cache /Users/jeremydoucet/.npm/generator-codercamps-net/0.0.5/package.tgz
+20 verbose correctMkdir /Users/jeremydoucet/.npm correctMkdir not in flight; initializing
+21 silly cache afterAdd generator-codercamps-net@0.0.5
+22 verbose afterAdd /Users/jeremydoucet/.npm/generator-codercamps-net/0.0.5/package/package.json not in flight; writing
+23 verbose correctMkdir /Users/jeremydoucet/.npm correctMkdir not in flight; initializing
+24 verbose afterAdd /Users/jeremydoucet/.npm/generator-codercamps-net/0.0.5/package/package.json written
+25 silly publish { name: 'generator-codercamps-net',
+25 silly publish   version: '0.0.5',
+25 silly publish   description: 'Starter site for AngularJS + ASP.NET Core + TypeScript Apps',
+25 silly publish   homepage: 'https://github.com/codercamps/generator-codercamps-net#readme',
+25 silly publish   author: { name: 'Jeremy-Doucet', email: 'jeremy.doucet@codercamps.com' },
+25 silly publish   files: [ 'generators' ],
+25 silly publish   main: 'generators\\index.js',
+25 silly publish   keywords: [ 'yeoman-generator' ],
+25 silly publish   dependencies:
+25 silly publish    { 'yeoman-generator': '^0.21.1',
+25 silly publish      chalk: '^1.0.0',
+25 silly publish      yosay: '^1.0.2' },
+25 silly publish   devDependencies:
+25 silly publish    { gulp: '^3.6.0',
+25 silly publish      'gulp-eslint': '^1.0.0',
+25 silly publish      'gulp-exclude-gitignore': '^1.0.0',
+25 silly publish      'gulp-istanbul': '^0.9.0',
+25 silly publish      'gulp-mocha': '^2.0.0',
+25 silly publish      'gulp-nsp': '^2.1.0',
+25 silly publish      'gulp-plumber': '^1.0.0',
+25 silly publish      'yeoman-assert': '^2.0.0',
+25 silly publish      'yeoman-generator': '^0.21.1' },
+25 silly publish   repository:
+25 silly publish    { type: 'git',
+25 silly publish      url: 'git+https://github.com/codercamps/generator-codercamps-net.git' },
+25 silly publish   scripts: { prepublish: 'gulp prepublish', test: 'gulp' },
+25 silly publish   license: 'MIT',
+25 silly publish   readme: '# generator-codercamps-net [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]\n> Starter site for AngularJS + ASP.NET Core + TypeScript Apps\n\n## Installation\n\nFirst, install [Yeoman](http://yeoman.io) and generator-codercamps-net using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).\n\n```bash\nnpm install -g yo\nnpm install -g generator-codercamps-net\n```\n\nThen generate your new project:\n\n```bash\nyo generator-codercamps-net\n```\n\n## Getting To Know Yeoman\n\nYeoman has a heart of gold. He&#39;s a person with feelings and opinions, but he&#39;s very easy to work with. If you think he&#39;s too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).\n\n## License\n\nMIT © [StephenCoderCamps]()\n\n\n[npm-image]: https://badge.fury.io/js/generator-codercamps-net.svg\n[npm-url]: https://npmjs.org/package/generator-codercamps-net\n[travis-image]: https://travis-ci.org/CoderCamps/generator-codercamps-net.svg?branch=master\n[travis-url]: https://travis-ci.org/CoderCamps/generator-codercamps-net\n[daviddm-image]: https://david-dm.org/CoderCamps/generator-codercamps-net.svg?theme=shields.io\n[daviddm-url]: https://david-dm.org/CoderCamps/generator-codercamps-net\n',
+25 silly publish   readmeFilename: 'README.md',
+25 silly publish   gitHead: '6c3ddd6c3b47098173ff83a1ff3013afafcbf8e6',
+25 silly publish   bugs: { url: 'https://github.com/codercamps/generator-codercamps-net/issues' },
+25 silly publish   _id: 'generator-codercamps-net@0.0.5',
+25 silly publish   _shasum: '89ab8b83f07267d741c0c31b1ef8716cd05031cc',
+25 silly publish   _from: '.' }
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name generator-codercamps-net
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry uri https://registry.npmjs.org/generator-codercamps-net
+31 verbose publish registryBase https://registry.npmjs.org/
+32 silly publish uploading /Users/jeremydoucet/.npm/generator-codercamps-net/0.0.5/package.tgz
+33 verbose request uri https://registry.npmjs.org/generator-codercamps-net
+34 verbose request sending authorization for write operation
+35 info attempt registry request try #1 at 7:40:10 AM
+36 verbose request using bearer token for auth
+37 verbose request id e216a7de4242b6e5
+38 http request PUT https://registry.npmjs.org/generator-codercamps-net
+39 http 403 https://registry.npmjs.org/generator-codercamps-net
+40 verbose headers { 'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=300',
+40 verbose headers   'content-length': '95',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   date: 'Fri, 18 Mar 2016 14:40:18 GMT',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-served-by': 'cache-lax1429-LAX',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1458312015.854069,VS0,VE2837' }
+41 verbose request invalidating /Users/jeremydoucet/.npm/registry.npmjs.org/generator-codercamps-net on PUT
+42 error publish Failed PUT 403
+43 verbose stack Error: "You cannot publish over the previously published version 0.0.5." : generator-codercamps-net
+43 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+43 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+43 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+43 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:199:22)
+43 verbose stack     at emitTwo (events.js:100:13)
+43 verbose stack     at Request.emit (events.js:185:7)
+43 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1036:10)
+43 verbose stack     at emitOne (events.js:95:20)
+43 verbose stack     at Request.emit (events.js:182:7)
+43 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:963:12)
+44 verbose statusCode 403
+45 verbose pkgid generator-codercamps-net
+46 verbose cwd /Users/jeremydoucet/Documents/projects/cc-generators/generator-codercamps-net
+47 error Darwin 15.3.0
+48 error argv "/usr/local/Cellar/node/5.8.0/bin/node" "/usr/local/bin/npm" "publish"
+49 error node v5.8.0
+50 error npm  v3.8.1
+51 error code E403
+52 error "You cannot publish over the previously published version 0.0.5." : generator-codercamps-net
+53 error If you need help, you may report this error at:
+53 error     <https://github.com/npm/npm/issues>
+54 verbose exit [ 1, true ]
