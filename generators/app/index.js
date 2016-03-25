@@ -17,15 +17,12 @@ module.exports = yeoman.generators.Base.extend({
       name: 'appName',
       message: 'What is the name of your application?',
       required: true,
-      default: 'Generator-CoderCamps-NET'
+      default: 'MyApp'
     }, {
       name: 'type',
       message: 'Which type of project would you like to create?',
       type: 'list',
-      choices: ['Empty', 'Sample Data', {
-        name: 'Security - Disabled Currently',
-        disabled: true
-      }]
+      choices: ['Empty', 'Sample Data', 'Security']
     }];
 
     inquirer.prompt(prompts, function(props) {
@@ -70,12 +67,14 @@ module.exports = yeoman.generators.Base.extend({
       '/Services/ISmsSender.cs',
       '/Services/MessageServices.cs',
       // View Models -- Account
+      '/ViewModels/Account/ExternalLoginViewModel.cs',
       '/ViewModels/Account/ExternalLoginConfirmationViewModel.cs',
       '/ViewModels/Account/ForgotPasswordViewModel.cs',
       '/ViewModels/Account/LoginViewModel.cs',
       '/ViewModels/Account/RegisterViewModel.cs',
       '/ViewModels/Account/ResetPasswordViewModel.cs',
       '/ViewModels/Account/SendCodeViewModel.cs',
+      '/ViewModels/Account/UserViewModel.cs',
       '/ViewModels/Account/VerifyCodeViewModel.cs',
       // View Models -- Manage
       '/ViewModels/Manage/AddPhoneNumberViewModel.cs',
@@ -102,12 +101,12 @@ module.exports = yeoman.generators.Base.extend({
       '/wwwroot/images/Banner-01-Azure.png',
       '/wwwroot/images/Banner-02-VS.png',
       // wwwroot -- ngApp
-      '/wwwroot/ngApp/about.html',
-      '/wwwroot/ngApp/home.html',
-      '/wwwroot/ngApp/notFound.html',
+      '/wwwroot/ngApp/views/about.html',
+      '/wwwroot/ngApp/views/home.html',
+      '/wwwroot/ngApp/views/notFound.html',
       '/wwwroot/ngApp/app.ts',
-      '/wwwroot/ngApp/services.ts',
-      '/wwwroot/ngApp/controllers.ts'
+      '/wwwroot/ngApp/services/services.ts',
+      '/wwwroot/ngApp/controllers/controllers.ts'
     ];
 
     var new_root = './' + this.appName + '/src/' + this.appName;
@@ -160,6 +159,24 @@ module.exports = yeoman.generators.Base.extend({
         this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
       }
     }
+      // security
+      if(this.type === 'Security') {
+        var files = [
+          '/API/AccountController.cs',
+          '/API/SecretsController.cs',
+          '/Models/SampleData.cs',
+          '/wwwroot/ngApp/services/accountService.ts',
+          '/wwwroot/ngApp/controllers/accountController.ts',
+          '/wwwroot/ngApp/views/secret.html',
+          '/wwwroot/ngApp/views/login.html',
+          '/wwwroot/ngApp/views/register.html',
+          '/wwwroot/ngApp/views/externalRegister.html'
+        ];
+        var new_root = './' + this.appName + '/src/' + this.appName;
+        for(let file of files) {
+          this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
+        }
+      }
   },
   install: function() {
     var appName = this.appName

@@ -67,6 +67,14 @@ namespace <%= appNamespace %>
                     new CamelCasePropertyNamesContractResolver();
             });
 
+<% if(type === "Security") { %>
+            // add security policies
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireClaim("IsAdmin"));
+            });
+<% } %>
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -114,6 +122,11 @@ namespace <%= appNamespace %>
                      defaults: new { controller = "Home", action = "Index" }
                 );
             });
+
+<% if(type === "Security") { %>
+            // initialize sample data
+            SampleData.Initialize(app.ApplicationServices).Wait();
+<% } %>
         }
 
         // Entry point for the application.

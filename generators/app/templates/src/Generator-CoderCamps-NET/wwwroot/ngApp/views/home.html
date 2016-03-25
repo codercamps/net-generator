@@ -1,0 +1,11 @@
+<% if(type === 'Sample Data') { %>
+<h2>Home</h2>
+<ul>
+    <li ng-repeat="movie in controller.movies">
+        {{movie.title}}
+    </li>
+</ul>
+<% } else { %><h2>Home</h2>
+<p>
+    {{controller.message}}
+</p><% } %>
