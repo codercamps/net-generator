@@ -1,6 +1,6 @@
 {
   "name": "generator-codercamps-net",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Starter site for AngularJS + ASP.NET Core + TypeScript Apps",
   "homepage": "",
   "author": {
@@ -13,7 +13,9 @@
   ],
   "main": "generators\\index.js",
   "keywords": [
-    "yeoman-generator", "ASP.NET Core", "TypeScript"
+    "yeoman-generator",
+    "ASP.NET Core",
+    "TypeScript"
   ],
   "dependencies": {
     "yeoman-generator": "^0.21.1",
