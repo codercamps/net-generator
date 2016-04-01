@@ -13,7 +13,7 @@
   ],
   "main": "generators\\index.js",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator", "ASP.NET Core", "TypeScript"
   ],
   "dependencies": {
     "yeoman-generator": "^0.21.1",
