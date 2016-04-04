@@ -20,21 +20,21 @@ namespace <%= appNamespace %>.API
             _movieService = movieService;
         }
 
-        // GET: api/values
+        // GET: api/movies
         [HttpGet]
         public IEnumerable<Movie> Get()
         {
             return _movieService.ListMovies();
         }
 
-        // GET api/values/5
+        // GET api/movies/5
         [HttpGet("{id}")]
         public Movie Get(int id)
         {
             return _movieService.FindMovie(id);
         }
 
-        // POST api/values
+        // POST movies/values
         [HttpPost]
         public void Post([FromBody]Movie movie)
         {
@@ -42,11 +42,20 @@ namespace <%= appNamespace %>.API
         }
 
 
-        // DELETE api/values/5
+        // DELETE api/movies/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
             _movieService.DeleteMovie(id);
         }
+
+        // GET: api/movies
+        [HttpGet("search/{searchText}")]
+        public IEnumerable<Movie> Get(string searchText)
+        {
+            return _movieService.SearchMovies(searchText);
+        }
+
+
     }
 }

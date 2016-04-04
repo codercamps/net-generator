@@ -64,6 +64,12 @@ namespace <%= appNamespace %>.Services
             _movies.Remove(original);
         }
 
+        public IList<Movie> SearchMovies(string searchText)
+        {
+          return _movies
+           .Where(m => m.Title.ToLower().Contains(searchText.ToLower()))
+           .ToList();
+        }
 
 
 

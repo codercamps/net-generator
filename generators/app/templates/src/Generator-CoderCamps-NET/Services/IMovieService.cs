@@ -9,5 +9,6 @@ namespace <%= appNamespace %>.Services
         Movie FindMovie(int id);
         IList<Movie> ListMovies();
         void SaveMovie(Movie movie);
+        IList<Movie> SearchMovies(string searchText);
     }
 }
