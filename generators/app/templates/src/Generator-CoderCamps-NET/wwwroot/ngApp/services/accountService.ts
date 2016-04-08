@@ -91,6 +91,16 @@ namespace <%= appNamespace %>.Services {
         }
 
 
+        // checks whether the current user is authenticated on the server and returns user info
+        public checkAuthentication() {
+            this.$http.get('/api/account/checkAuthentication')
+                .then((result) => {
+                    if (result.data) {
+                        this.storeUserInfo(result.data);
+                    }
+                });
+        }
+
         confirmEmail(userId, code): ng.IPromise<{}> {
             return this.$q((resolve, reject) => {
                 let data = {
@@ -130,7 +140,11 @@ namespace <%= appNamespace %>.Services {
             private $q: ng.IQService,
             private $http: ng.IHttpService,
             private $window: ng.IWindowService
-        ) { }
+        ) {
+          // in case we are redirected from a social provider
+          // we need to check if we are authenticated.
+          this.checkAuthentication();
+        }
 
     }
 

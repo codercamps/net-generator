@@ -122,6 +122,21 @@ namespace <%= appNamespace %>.Controllers
             return HttpBadRequest(this.ModelState);
         }
 
+
+
+        [HttpGet("checkAuthentication")]
+        [AllowAnonymous]
+        public async Task<IActionResult> CheckAuthentication()
+        {
+            if (this.User.IsSignedIn())
+            {
+                var userViewModel = await GetUser(this.User.GetUserName());
+                return Ok(userViewModel);
+            }
+            return Ok();
+        }
+
+
         //
         // POST: /Account/LogOff
         [HttpPost("logout")]
