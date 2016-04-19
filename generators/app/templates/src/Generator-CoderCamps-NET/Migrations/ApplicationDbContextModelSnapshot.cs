@@ -98,7 +98,7 @@ namespace <%= appNamespace %>.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUserRoles");
                 });
 
-            modelBuilder.Entity("Generator_CoderCamps_NET.Models.ApplicationUser", b =>
+            modelBuilder.Entity("<%= appNamespace %>.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id");
 
@@ -155,14 +155,14 @@ namespace <%= appNamespace %>.Migrations
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Generator_CoderCamps_NET.Models.ApplicationUser")
+                    b.HasOne("<%= appNamespace %>.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Generator_CoderCamps_NET.Models.ApplicationUser")
+                    b.HasOne("<%= appNamespace %>.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });
@@ -173,7 +173,7 @@ namespace <%= appNamespace %>.Migrations
                         .WithMany()
                         .HasForeignKey("RoleId");
 
-                    b.HasOne("Generator_CoderCamps_NET.Models.ApplicationUser")
+                    b.HasOne("<%= appNamespace %>.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
                 });

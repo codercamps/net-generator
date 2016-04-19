@@ -176,9 +176,11 @@ module.exports = yeoman.generators.Base.extend({
         for(let file of files) {
           this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
         }
+
       }
   },
   install: function() {
+    
     var appName = this.appName
     process.chdir(process.cwd() + '/' + appName + '/src/' + appName);
     // this.installDependencies();
