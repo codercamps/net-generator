@@ -11,7 +11,7 @@ module.exports = yeoman.generators.Base.extend({
     var done = this.async();
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.red('Angular') + ' generator!'
+      'Welcome to the ' + chalk.red('Coder Camps') + ' generator!'
     ));
     var prompts = [{
       name: 'appName',
@@ -180,7 +180,7 @@ module.exports = yeoman.generators.Base.extend({
       }
   },
   install: function() {
-    
+
     var appName = this.appName
     process.chdir(process.cwd() + '/' + appName + '/src/' + appName);
     // this.installDependencies();
