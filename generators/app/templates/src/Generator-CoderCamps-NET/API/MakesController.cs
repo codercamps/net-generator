@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using <%= appNamespace %>.Models;
 using <%= appNamespace %>.Services;
 
@@ -13,9 +13,9 @@ namespace <%= appNamespace %>.API
     [Route("api/[controller]")]
     public class MakesController : Controller
     {
-        private ICarService _carService;
+        private CarService _carService;
 
-        public MakesController(ICarService carService)
+        public MakesController(CarService carService)
         {
             _carService = carService;
         }

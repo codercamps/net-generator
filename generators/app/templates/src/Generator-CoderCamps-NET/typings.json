@@ -1,12 +1,9 @@
 {
-  "name": "<%= appNamespace %>",
-  "version": false,
-  "dependencies": {},
-  "ambientDependencies": {
-    "angular": "registry:dt/angular#1.5.0+20160412133217",
+  "globalDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160517064839",
     "angular-resource": "registry:dt/angular-resource#1.5.0+20160412142209",
-    "angular-ui-bootstrap": "registry:dt/angular-ui-bootstrap#0.13.3+20160406111533",
-    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160412134757",
-    "jquery": "registry:dt/jquery#1.10.0+20160316155526"
+    "angular-ui-bootstrap": "registry:dt/angular-ui-bootstrap#0.13.3+20160501125848",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160514162931",
+    "jquery": "registry:dt/jquery#1.10.0+20160417213236"
   }
 }

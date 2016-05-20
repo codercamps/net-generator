@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using <%= appNamespace %>.Models;
 using <%= appNamespace %>.Services;
 
@@ -12,9 +12,9 @@ namespace <%= appNamespace %>.API
     [Route("api/[controller]")]
     public class GenresController : Controller
     {
-        private IGenreService _genreService;
+        private GenreService _genreService;
 
-        public GenresController(IGenreService genreService)
+        public GenresController(GenreService genreService)
         {
             this._genreService = genreService;
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace <%= appNamespace %>.Services
 {
-    public class CarService : ICarService
+    public class CarService 
     {
         private static List<CarMake> _makes = new List<CarMake>
         {

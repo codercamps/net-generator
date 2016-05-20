@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using <%= appNamespace %>.Services;
 using <%= appNamespace %>.Models;
 
@@ -13,9 +13,9 @@ namespace <%= appNamespace %>.API
     [Route("api/[controller]")]
     public class GuestbookController : Controller
     {
-        private IGuestbookService _guestbookService;
+        private GuestbookService _guestbookService;
 
-        public GuestbookController(IGuestbookService guestbookService)
+        public GuestbookController(GuestbookService guestbookService)
         {
             _guestbookService = guestbookService;
         }

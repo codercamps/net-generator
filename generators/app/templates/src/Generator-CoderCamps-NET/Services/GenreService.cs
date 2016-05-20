@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace <%= appNamespace %>.Services
 {
-    public class GenreService : IGenreService
+    public class GenreService 
     {
         private List<Genre> _genres = new List<Genre> {
               new Genre {

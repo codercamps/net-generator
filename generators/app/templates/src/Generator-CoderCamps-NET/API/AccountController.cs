@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Authorization;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Mvc;
-using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Data.Entity;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using <%= appNamespace %>.Models;
 using <%= appNamespace %>.Services;
@@ -78,17 +77,17 @@ namespace <%= appNamespace %>.Controllers
                 {
                     _logger.LogWarning(2, "User account locked out.");
                     this.ModelState.AddModelError("", "User account locked out.");
-                    return HttpBadRequest(this.ModelState);
+                    return BadRequest(this.ModelState);
                 }
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return HttpBadRequest(this.ModelState);
+                    return BadRequest(this.ModelState);
                 }
             }
 
             // If we got this far, something failed, redisplay form
-            return HttpBadRequest(this.ModelState);
+            return BadRequest(this.ModelState);
         }
 
 
@@ -119,7 +118,7 @@ namespace <%= appNamespace %>.Controllers
             }
 
             // If we got this far, something failed
-            return HttpBadRequest(this.ModelState);
+            return BadRequest(this.ModelState);
         }
 
 
@@ -128,9 +127,9 @@ namespace <%= appNamespace %>.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> CheckAuthentication()
         {
-            if (this.User.IsSignedIn())
+            if (this._signInManager.IsSignedIn(this.User))
             {
-                var userViewModel = await GetUser(this.User.GetUserName());
+                var userViewModel = await GetUser(this.User.Identity.Name);
                 return Ok(userViewModel);
             }
             return Ok();
@@ -203,7 +202,7 @@ namespace <%= appNamespace %>.Controllers
                 // If the user does not have an account, then ask the user to create an account.
                 ViewData["ReturnUrl"] = returnUrl;
                 ViewData["LoginProvider"] = info.LoginProvider;
-                var email = info.ExternalPrincipal.FindFirstValue(ClaimTypes.Email);
+                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
                 return RedirectToLocal("/externalRegister");
                 //return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = email });
             }
@@ -215,10 +214,7 @@ namespace <%= appNamespace %>.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> ExternalLoginConfirmation([FromBody]ExternalLoginConfirmationViewModel model, string returnUrl = null)
         {
-            if (User.IsSignedIn())
-            {
-                //return RedirectToAction(nameof(ManageController.Index), "Manage");
-            }
+
 
             if (ModelState.IsValid)
             {
@@ -227,7 +223,7 @@ namespace <%= appNamespace %>.Controllers
                 if (info == null)
                 {
                     ModelState.AddModelError("", "ExternalLoginFailure");
-                    return HttpBadRequest(this.ModelState);
+                    return BadRequest(this.ModelState);
                     //return View("ExternalLoginFailure");
                 }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
@@ -247,7 +243,7 @@ namespace <%= appNamespace %>.Controllers
             }
 
            // ViewData["ReturnUrl"] = returnUrl;
-            return HttpBadRequest(this.ModelState);
+            return BadRequest(this.ModelState);
         }
 
         // GET: /Account/ConfirmEmail
@@ -470,9 +466,9 @@ namespace <%= appNamespace %>.Controllers
             }
         }
 
-        private async Task<ApplicationUser> GetCurrentUserAsync()
+        private Task<ApplicationUser> GetCurrentUserAsync()
         {
-            return await _userManager.FindByIdAsync(HttpContext.User.GetUserId());
+            return _userManager.GetUserAsync(HttpContext.User);
         }
 
         private IActionResult RedirectToLocal(string returnUrl)
@@ -488,5 +484,6 @@ namespace <%= appNamespace %>.Controllers
         }
 
         #endregion
+
     }
 }

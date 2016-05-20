@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using <%= appNamespace %>.Models;
 using <%= appNamespace %>.Services;
 
@@ -13,9 +13,9 @@ namespace <%= appNamespace %>.API
     [Route("api/[controller]")]
     public class MoviesController : Controller
     {
-        private IMovieService _movieService;
+        private MovieService _movieService;
 
-        public MoviesController(IMovieService movieService)
+        public MoviesController(MovieService movieService)
         {
             _movieService = movieService;
         }

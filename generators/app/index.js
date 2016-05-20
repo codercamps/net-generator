@@ -42,6 +42,7 @@ module.exports = yeoman.generators.Base.extend({
 
     let genFiles = [
       '/.bowerrc',
+      '/Program.cs',
       '/appsettings.json',
       '/bower.json',
       '/gulpfile.js',
@@ -51,14 +52,16 @@ module.exports = yeoman.generators.Base.extend({
       '/Startup.cs',
       '/tsconfig.json',
       '/typings.json',
+      '/web.config',
 
       '/Controllers/HomeController.cs',
       // Migrations
-      '/Migrations/00000000000000_CreateIdentitySchema.cs',
-      '/Migrations/00000000000000_CreateIdentitySchema.Designer.cs',
-      '/Migrations/ApplicationDbContextModelSnapshot.cs',
+      '/Data/Migrations/00000000000000_CreateIdentitySchema.cs',
+      '/Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs',
+      '/Data/Migrations/ApplicationDbContextModelSnapshot.cs',
+      '/Data/ApplicationDbContext.cs',
+
       // Models
-      '/Models/ApplicationDbContext.cs',
       '/Models/ApplicationUser.cs',
       // Properties
       '/Properties/launchSettings.json',
@@ -91,7 +94,6 @@ module.exports = yeoman.generators.Base.extend({
       // wwwroot
       '/wwwroot/_references.js',
       '/wwwroot/favicon.ico',
-      '/wwwroot/web.config',
       // wwwroot -- css
       '/wwwroot/css/site.css',
       '/wwwroot/css/site.min.css',
@@ -148,10 +150,6 @@ module.exports = yeoman.generators.Base.extend({
         '/Services/CarService.cs',
         '/Services/GenreService.cs',
         '/Services/GuestbookService.cs',
-        '/Services/ICarService.cs',
-        '/Services/IGenreService.cs',
-        '/Services/IGuestbookService.cs',
-        '/Services/IMovieService.cs',
         '/Services/MovieService.cs'
       ];
       var new_root = './' + this.appName + '/src/' + this.appName;
@@ -164,7 +162,7 @@ module.exports = yeoman.generators.Base.extend({
         var files = [
           '/API/AccountController.cs',
           '/API/SecretsController.cs',
-          '/Models/SampleData.cs',
+          '/Data/SampleData.cs',
           '/wwwroot/ngApp/services/accountService.ts',
           '/wwwroot/ngApp/controllers/accountController.ts',
           '/wwwroot/ngApp/views/secret.html',

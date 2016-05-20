@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace <%= appNamespace %>.Services
 {
-    public class MovieService : IMovieService
+    public class MovieService
     {
         private static List<Movie> _movies;
         private static int _movieId;

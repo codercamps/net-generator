@@ -1,12 +1,12 @@
 using System;
 using System.Linq;
-using Microsoft.Data.Entity;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using <%= appNamespace %>.Models;
 
-namespace <%= appNamespace %>.Models
+namespace <%= appNamespace %>.Data
 {
     public class SampleData
     {
@@ -14,7 +14,6 @@ namespace <%= appNamespace %>.Models
         {
             var context = serviceProvider.GetService<ApplicationDbContext>();
             var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
-            context.Database.Migrate();
 
             // Ensure Stephen (IsAdmin)
             var stephen = await userManager.FindByNameAsync("Stephen.Walther@CoderCamps.com");

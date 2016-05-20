@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace <%= appNamespace %>.Services
 {
-    public class GuestbookService : IGuestbookService
+    public class GuestbookService
     {
         private static List<GuestbookEntry> _entries;
         private static int _entryId;
