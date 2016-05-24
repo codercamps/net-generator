@@ -2,6 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var uuid = require('uuid');
 // var _ = require('lodash');
 var _s = require('underscore.string');
 var inquirer = require('inquirer');
@@ -28,6 +29,7 @@ module.exports = yeoman.generators.Base.extend({
     inquirer.prompt(prompts, function(props) {
       this.appName = props.appName.replace(/\s\s/g, '-')
       this.appNamespace = this.appName.replace(/-/g, '_');
+      this.uuid = uuid.v1();
       // this.appName = _s.slugify(props.appName) || 'coder-camps-js';
       // this.appDesc = props.appDesc || 'A MEAN stack application.';
       this.type = props.type;
