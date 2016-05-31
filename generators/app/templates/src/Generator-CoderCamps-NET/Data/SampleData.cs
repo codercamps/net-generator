@@ -15,6 +15,9 @@ namespace <%= appNamespace %>.Data
             var context = serviceProvider.GetService<ApplicationDbContext>();
             var userManager = serviceProvider.GetService<UserManager<ApplicationUser>>();
 
+            // Ensure db
+            context.Database.EnsureCreated();
+
             // Ensure Stephen (IsAdmin)
             var stephen = await userManager.FindByNameAsync("Stephen.Walther@CoderCamps.com");
             if (stephen == null)
