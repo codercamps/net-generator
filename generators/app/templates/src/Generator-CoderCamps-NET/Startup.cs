@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Serialization;
 using <%= appNamespace %>.Data;
 using <%= appNamespace %>.Models;
 using <%= appNamespace %>.Services;
@@ -59,12 +58,6 @@ namespace <%= appNamespace %>
                         services.AddScoped<GenreService>();
                         services.AddScoped<GuestbookService>();
                         services.AddScoped<CarService>();<% } %>
-
-                        // convert Pascal to Camel
-                        services.AddMvc().AddJsonOptions(options => {
-                            options.SerializerSettings.ContractResolver =
-                                new CamelCasePropertyNamesContractResolver();
-                        });
 
             <% if(type === "Security") { %>
                         // add security policies

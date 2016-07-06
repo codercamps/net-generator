@@ -47,8 +47,6 @@ module.exports = yeoman.generators.Base.extend({
       '/Program.cs',
       '/appsettings.json',
       '/bower.json',
-      '/gulpfile.js',
-      '/package.json',
       '/Project_Readme.html',
       '/project.json',
       '/Startup.cs',
