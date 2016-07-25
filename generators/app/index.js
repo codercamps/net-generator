@@ -15,21 +15,29 @@ module.exports = yeoman.generators.Base.extend({
       'Welcome to the ' + chalk.red('Coder Camps') + ' generator!'
     ));
     var prompts = [{
-      name: 'appName',
-      message: 'What is the name of your application?',
-      required: true,
-      default: 'MyApp'
-    }, {
-      name: 'type',
-      message: 'Which type of project would you like to create?',
-      type: 'list',
-      choices: ['Empty', 'Sample Data', 'Security']
-    }];
+        name: 'appName',
+        message: 'What is the name of your application?',
+        required: true,
+        default: 'MyApp'
+      }, {
+        name: 'coreVersion',
+        message: '.NET Core or .NET Framework?',
+        type: 'list',
+        choices: ['.NET Core', '.NET Framework']
+      }, {
+        name: 'type',
+        message: 'Which type of project would you like to create?',
+        type: 'list',
+        choices: ['Empty', 'Sample Data', 'Security']
+      }
+    ];
 
     inquirer.prompt(prompts, function(props) {
       this.appName = props.appName.replace(/\s\s/g, '-')
       this.appNamespace = this.appName.replace(/-/g, '_');
+      this.coreVersion = props.coreVersion;
       this.uuid = uuid.v1();
+      this.port = Math.floor(Math.random() * 60000 + 1024);
       // this.appName = _s.slugify(props.appName) || 'coder-camps-js';
       // this.appDesc = props.appDesc || 'A MEAN stack application.';
       this.type = props.type;
@@ -131,7 +139,7 @@ module.exports = yeoman.generators.Base.extend({
     this.template('./src/Generator-CoderCamps-NET/Generator-CoderCamps-NET.xproj.user', new_root + '/' + appName + '.xproj.user');
   },
   sample_data: function() {
-    if(this.type === 'Sample Data') {
+    if (this.type === 'Sample Data') {
       var files = [
         '/API/CarsController.cs',
         '/API/DeepThought.cs',
@@ -153,29 +161,29 @@ module.exports = yeoman.generators.Base.extend({
         '/Services/MovieService.cs'
       ];
       var new_root = './' + this.appName + '/src/' + this.appName;
-      for(let file of files) {
+      for (let file of files) {
         this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
       }
     }
-      // security
-      if(this.type === 'Security') {
-        var files = [
-          '/API/AccountController.cs',
-          '/API/SecretsController.cs',
-          '/Data/SampleData.cs',
-          '/wwwroot/ngApp/services/accountService.ts',
-          '/wwwroot/ngApp/controllers/accountController.ts',
-          '/wwwroot/ngApp/views/secret.html',
-          '/wwwroot/ngApp/views/login.html',
-          '/wwwroot/ngApp/views/register.html',
-          '/wwwroot/ngApp/views/externalRegister.html'
-        ];
-        var new_root = './' + this.appName + '/src/' + this.appName;
-        for(let file of files) {
-          this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
-        }
-
+    // security
+    if (this.type === 'Security') {
+      var files = [
+        '/API/AccountController.cs',
+        '/API/SecretsController.cs',
+        '/Data/SampleData.cs',
+        '/wwwroot/ngApp/services/accountService.ts',
+        '/wwwroot/ngApp/controllers/accountController.ts',
+        '/wwwroot/ngApp/views/secret.html',
+        '/wwwroot/ngApp/views/login.html',
+        '/wwwroot/ngApp/views/register.html',
+        '/wwwroot/ngApp/views/externalRegister.html'
+      ];
+      var new_root = './' + this.appName + '/src/' + this.appName;
+      for (let file of files) {
+        this.template('./src/Generator-CoderCamps-NET' + file, new_root + file);
       }
+
+    }
   },
   install: function() {
 

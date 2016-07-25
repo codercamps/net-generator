@@ -1,11 +1,11 @@
 {
   "userSecretsId": "aspnet-<%= appName %>-<%= uuid %>",
 
-  "dependencies": {
+  "dependencies": {<% if (coreVersion === '.NET Core') { %>
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
       "type": "platform"
-    },
+    },<% } %>
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
@@ -24,8 +24,8 @@
       "type": "build"
     },
     "Microsoft.EntityFrameworkCore.Tools": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
+        "version": "1.0.0-preview2-final",
+        "type": "build"
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
     "Microsoft.Extensions.Configuration.Json": "1.0.0",
@@ -60,12 +60,12 @@
   },
 
   "frameworks": {
-    "netcoreapp1.0": {
+      <% if(coreVersion === '.NET Core') { %>"netcoreapp1.0": {
       "imports": [
         "dotnet5.6",
         "portable-net45+win8"
       ]
-    }
+    }<% } if(coreVersion === '.NET Framework') { %>"net452": {}<% } %>
   },
 
   "buildOptions": {
