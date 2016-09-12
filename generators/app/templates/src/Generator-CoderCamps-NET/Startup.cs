@@ -9,9 +9,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 using <%= appNamespace %>.Data;
 using <%= appNamespace %>.Models;
 using <%= appNamespace %>.Services;
+
 
 namespace <%= appNamespace %>
 {
@@ -86,6 +89,12 @@ namespace <%= appNamespace %>
             }
 
             app.UseStaticFiles();
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "bower_components")),
+                RequestPath = "/bower_components"
+            });
 
             app.UseIdentity();
 

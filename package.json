@@ -15,7 +15,8 @@
   "keywords": [
     "yeoman-generator",
     "ASP.NET Core",
-    "TypeScript"
+    "TypeScript",
+    "AngularJS"
   ],
   "dependencies": {
     "yeoman-generator": "^0.21.1",

@@ -1,8 +1,8 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="<%= appNamespace %>">
+﻿<html ng-app="<%= appNamespace %>">
 <head>
     <title><%= appName %></title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <base href="/" />
 </head>
 <body <% if(type === "Security") { %>ng-controller="AccountController as account"<% } %>>
@@ -25,22 +25,22 @@
     </div>
 
     <!-- Library Files -->
-    <script src="~/lib/angular/angular.js"></script>
-    <script src="~/lib/angular-resource/angular-resource.js"></script>
-    <script src="~/lib/angular-animate/angular-animate.js"></script>
-    <script src="~/lib/angular-touch/angular-touch.js"></script>
-    <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
     <!-- App Files-->
-    <script src="~/ngapp/app.js"></script>
-    <script src="~/ngapp/controllers/controllers.js"></script>
-    <script src="~/ngapp/services/services.js"></script>
+    <script src="/ngapp/app.js"></script>
+    <script src="/ngapp/controllers/controllers.js"></script>
+    <script src="/ngapp/services/services.js"></script>
 
 <% if(type === "Security") { %>
     <!-- Security -->
-    <script src="~/ngapp/controllers/accountcontroller.js"></script>
-    <script src="~/ngapp/services/accountservice.js"></script>
+    <script src="/ngapp/controllers/accountcontroller.js"></script>
+    <script src="/ngapp/services/accountservice.js"></script>
 <% } %>
 </body>
 </html>

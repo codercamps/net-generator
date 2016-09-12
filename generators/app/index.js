@@ -51,7 +51,7 @@ module.exports = yeoman.generators.Base.extend({
     // this.template('typings.json', 'typings.json');
 
     let genFiles = [
-      '/.bowerrc',
+      //'/.bowerrc',
       '/Program.cs',
       '/appsettings.json',
       '/bower.json',

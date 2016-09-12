@@ -2,7 +2,8 @@
 > Starter site for AngularJS + ASP.NET Core + TypeScript Apps
 
 ## Overview
-Enables you to generate ASP.NET Core + AngularJS 1.0 + TypeScript apps. 
+
+Enables you to generate ASP.NET Core + AngularJS 1.0 + TypeScript apps.
 
 ## Installation
 
