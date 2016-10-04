@@ -52,6 +52,7 @@ module.exports = yeoman.generators.Base.extend({
 
     let genFiles = [
       //'/.bowerrc',
+      '/package.json',
       '/Program.cs',
       '/appsettings.json',
       '/bower.json',
@@ -59,7 +60,6 @@ module.exports = yeoman.generators.Base.extend({
       '/project.json',
       '/Startup.cs',
       '/tsconfig.json',
-      '/typings.json',
       '/web.config',
 
       '/Controllers/HomeController.cs',
@@ -190,6 +190,6 @@ module.exports = yeoman.generators.Base.extend({
     var appName = this.appName
     process.chdir(process.cwd() + '/' + appName + '/src/' + appName);
     // this.installDependencies();
-    this.spawnCommandSync('typings', ['install']);
+    // this.spawnCommandSync('typings', ['install']);
   }
 });
