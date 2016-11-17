@@ -82,6 +82,7 @@
   "publishOptions": {
     "include": [
       "wwwroot",
+      "bower_components",
       "Views",
       "Areas/**/Views",
       "appsettings.json",
