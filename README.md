@@ -25,7 +25,7 @@ yo codercamps-net
 
 ## License
 
-MIT © [StephenCoderCamps]()
+MIT ©2015 Coder Camps
 
 
 [npm-image]: https://badge.fury.io/js/generator-codercamps-net.svg

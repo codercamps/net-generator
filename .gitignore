@@ -1,4 +1,7 @@
-node_modules
+node_modules/
+bower_components/
 coverage
+*.log
 
-npm-debug.log
+build/
+dist/
